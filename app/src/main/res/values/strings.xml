@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Grocery Receipts</string>
+    <string name="month_total">Month Total:</string>
+    <string name="budget_remaining">Budget Remaining:</string>
+
+    <string name="btn_add_receipt">Add Receipt</string>
+    <string name="btn_view_receipts">View Receipt</string>
+
+    <string name="store_name">Store</string>
+    <string name="receipt_amount">Total</string>
+
+    <string name="date">Date:</string>
+
+    <string name="empty_not_saved">Field missing. Receipt not saved.</string>
+    <string name="receipt_saved">Receipt has been added.</string>
+</resources>

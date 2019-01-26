@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ReceiptList">
+
+        <android.support.v7.widget.AppCompatSpinner
+                tools:text="January"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/month_spinner"
+                android:layout_marginEnd="@dimen/side_margin"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toEndOf="@+id/tv_month_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_month_title"
+                android:elevation="4dp"/>
+
+        <TextView
+                android:text="Month"
+                android:textSize="@dimen/header_text"
+                android:textAlignment="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/side_margin"
+                android:id="@+id/tv_month_title"
+                app:layout_constraintEnd_toStartOf="@+id/month_spinner"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
+                android:layout_marginTop="@dimen/margin_top"
+                app:layout_constraintTop_toTopOf="parent"
+                android:elevation="4dp"/>
+
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_top"
+            tools:listitem="@layout/receipt_recycler_view_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_month_title"/>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="store_array">
+        <item>Target</item>
+        <item>Costco</item>
+        <item>Whole Foods</item>
+        <item>Lakewinds</item>
+        <item>Cub</item>
+        <item>Liquor</item>
+        <item>Other</item>
+    </string-array>
+</resources>
