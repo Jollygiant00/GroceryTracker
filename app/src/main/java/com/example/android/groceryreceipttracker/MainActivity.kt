@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(viewReceiptIntent)
         }
+
+        //TODO get receipt totals for the month and pass to month total
+        //TODO subtract month total from budget amount
     }
+
+    //TODO long term create graph (amount spent/remaining?) or (user selected data?)
 
 }

@@ -1,6 +1,5 @@
 package com.example.android.groceryreceipttracker
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
@@ -21,7 +20,6 @@ class ReceiptList : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receipt_list)
 
-        //initialize variables
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         val adapter = ReceiptListAdapter(this)
         recyclerView.adapter = adapter
@@ -34,6 +32,7 @@ class ReceiptList : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         receiptViewModel = ViewModelProviders.of(this).get(ReceiptViewModel::class.java)
 
+        //set spinner list from resource array
         ArrayAdapter.createFromResource(
             this,
             R.array.month_name_array,
@@ -43,8 +42,11 @@ class ReceiptList : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             spMonthSelector.adapter = adapterList
         }
 
+        //save value of spinner during onCreate()
         val savedSpinnerString = spMonthSelector.selectedItem.toString()
 
+        //set observer for month query method
+        //call view model's getReceiptByMonth method and setReceipt method
         receiptViewModel.getReceiptByMonth(savedSpinnerString)?.observe(this, Observer { receipts ->
             receipts?.let { adapter.setReceipts(it)}
         })
@@ -54,8 +56,11 @@ class ReceiptList : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
+    //get new spinner value base on user selection
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
         val newSavedSpinner = parent?.getItemAtPosition(pos).toString()
+
+        //TODO get new data from view model on user selection
 
         receiptViewModel.getReceiptByMonth(newSavedSpinner)
     }
